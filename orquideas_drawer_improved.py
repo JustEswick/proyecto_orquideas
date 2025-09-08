@@ -44,8 +44,9 @@ class SvgAnimator:
     def _draw_next_region(self):
         # Condición de parada: si ya dibujamos todo, terminamos.
         if self.current_region_index >= len(self.regions):
-            print("🎨 ¡Animación completada!")
+            print("🎨 ¡Animación completada! Haz clic en la ventana para salir.")
             self.screen.update() # Aseguramos un último repintado
+            self.screen.exitonclick() # Mantiene la ventana abierta hasta que se hace clic
             return
 
         # Obtener la región actual
